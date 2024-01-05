@@ -1,0 +1,40 @@
+name: "01_Terraform"
+on:
+  workflow_dispatch:
+
+jobs:
+  Plan_Dev:
+    if: github.ref == 'refs/heads/develop'
+    uses: pratyusha-deekshit/test_HIG/.github/workflows/genesys_tf_plan.yml@develop
+    with:
+      path: genesys_objects
+      gh_environment: dev
+    secrets:
+      cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
+
+  Deploy_Dev:
+    needs: Plan_Dev
+    uses: pratyusha-deekshit/test_HIG/.github/workflows/genesys_tf_apply.yml@develop
+    with:
+      path: genesys_objects
+      gh_environment: dev
+    secrets:
+      cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
+
+  Plan_Prod:
+    if: github.ref == 'refs/heads/master'
+    uses: pratyusha-deekshit/test_HIG/.github/workflows/genesys_tf_plan.yml@master
+    with:
+      path: genesys_objects
+      gh_environment: prod
+    secrets:
+      cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
+
+  Deploy_Prod:
+    needs: Plan_Prod
+    uses: pratyusha-deekshit/test_HIG/.github/workflows/genesys_tf_apply.yml@master
+    with:
+      path: genesys_objects
+      gh_environment: prod
+    secrets:
+      cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
