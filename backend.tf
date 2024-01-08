@@ -6,7 +6,7 @@ terraform {
       name = "CICD_Training"
     }
   }
-}
+
 
  
 
