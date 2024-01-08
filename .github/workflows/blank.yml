@@ -1,33 +1,27 @@
-name: 'Terraform_manual'
+name: 'Terraform_Automatic'
 #Next 2 lines are for configuring the manual data action
 #on :
 # workflow_dispatch
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "dev" ]
     
 permissions:
   contents: read
 
 jobs:
   terraform:
-<<<<<<< HEAD
-
-    if: github.ref == 'refs/heads/Dev_Org' then
-    name: 'CICD2'
-=======
-    name: 'CICD'
->>>>>>> 6d17c9e8fd08ad119e5fea672809e4e7f0300452
+    name: 'Training-Dev'
     runs-on: ubuntu-latest
     environment: UK Lab
     
     
-    if: github.ref == 'refs/heads/main'
-    name: 'CICD'
+    if: github.ref == 'refs/heads/dev'
+    name: 'Training-Dev'
     
     runs-on: ubuntu-latest
-    environment: US Lab
+    
 
     # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
     defaults:
