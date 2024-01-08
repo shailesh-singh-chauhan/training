@@ -1,4 +1,4 @@
-name: 'Terraform_Automatic'
+name: 'Terraform_manual'
 #Next 2 lines are for configuring the manual data action
 #on :
 # workflow_dispatch
@@ -17,10 +17,10 @@ jobs:
     environment: UK Lab
     
     
-    if: github.ref == 'refs/heads/dev'
-    name: 'Training-Dev'
+    #if: github.ref == 'refs/heads/dev'
+   # name: 'Training-Dev1'
     
-    runs-on: ubuntu-latest
+   # runs-on: ubuntu-latest
     
 
     # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
