@@ -44,7 +44,7 @@ jobs:
         cli_config_credentials_token: ${{ secrets.TERRAFORM_CLOUD_SECRET}}
 
     - name: Terraform Login
-      run: terraform login -input=true
+      run: terraform login 
 
  
 
