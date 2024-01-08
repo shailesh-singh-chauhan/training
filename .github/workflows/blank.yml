@@ -43,11 +43,11 @@ jobs:
       with:
         cli_config_credentials_token: ${{ secrets.API_TOKEN}}
 
-    - name: Terraform Login
-      uses: hashicorp/setup-terraform@v1
-      with:
+   # - name: Terraform Login
+   #   uses: hashicorp/setup-terraform@v1
+    #  with:
       
-      run: terraform login 
+   #   run: terraform login 
 
  
 
