@@ -1,13 +1,12 @@
 terraform {
-  backend "remote" {
+  cloud {
     organization = "shailesh-singh-chauhan"
 
- 
-
     workspaces {
-      name = "CICD2"
+      name = "CICD_Training"
     }
   }
+
 
  
 
