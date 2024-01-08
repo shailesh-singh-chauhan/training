@@ -1,20 +1,19 @@
 terraform {
-  backend "remote" {
+  cloud {
     organization = "shailesh-singh-chauhan"
 
- 
-
     workspaces {
-      name = "Training-Dev"
+      name = "CICD_Training"
     }
   }
+}
 
  
 
   required_providers {
     genesyscloud = {
       source = "mypurecloud/genesyscloud"
-      version = "1.17.0"
+      version = "1.29.0"
     }
   }
 }
