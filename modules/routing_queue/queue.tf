@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 resource "genesyscloud_routing_queue" "example_queue4" {
   name                              = "Example Queue 4"
   division_id                       = data.genesyscloud_auth_division.demo1.id
