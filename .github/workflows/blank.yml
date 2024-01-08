@@ -14,7 +14,7 @@ jobs:
   terraform:
     name: 'Training-Dev'
     runs-on: ubuntu-latest
-    environment: UK Lab
+    #environment: UK Lab
     
     
     #if: github.ref == 'refs/heads/dev'
