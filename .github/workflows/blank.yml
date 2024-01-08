@@ -43,6 +43,9 @@ jobs:
       with:
         cli_config_credentials_token: ${{ secrets.TERRAFORM_CLOUD_SECRET}}
 
+    - name: Terraform Login
+      run: terraform login -input=true
+
  
 
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
